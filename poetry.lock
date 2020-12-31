@@ -345,6 +345,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pycodestyle"
+version = "2.6.0"
+description = "Python style guide checker"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "pydantic"
 version = "1.7.3"
 description = "Data validation and settings management using python 3.6 type hinting"
