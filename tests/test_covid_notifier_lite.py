@@ -1,5 +1,10 @@
-from covid_notifier_lite import __version__
+import pytest
+from covid_notifier_lite.app.app import read_root
 
 
-def test_version():
-    assert __version__ == '0.1.0'
+@pytest.mark.asyncio
+async def test_root():
+    expectedMessage = { "message": "Hello World of Covid"}
+    message = await read_root()
+
+    assert expectedMessage == message
