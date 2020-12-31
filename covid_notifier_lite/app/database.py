@@ -7,3 +7,4 @@ client = motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 database = client.covid_notifier
 
 hello_collection = database.get_collection("hello_collection")
+covid_collection = database.get_collection("covid_collection")

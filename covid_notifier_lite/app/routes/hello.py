@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 
-from app.crud.hello import (
+from covid_notifier_lite.app.crud.hello import (
     add_hello,
     get_hello,
     get_all_helloes,
@@ -9,7 +9,7 @@ from app.crud.hello import (
     delete_hello
 )
 
-from app.models.hello import (
+from covid_notifier_lite.app.models.hello import (
     ErrorResponseModel,
     ResponseModel,
     HelloSchema,

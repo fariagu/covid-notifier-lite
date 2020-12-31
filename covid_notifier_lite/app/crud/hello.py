@@ -1,6 +1,7 @@
 from typing import Any
 from bson.objectid import ObjectId
-from app.database import hello_collection
+from covid_notifier_lite.app.database import hello_collection
+
 
 #helpers
 def hello_helper(hello) -> dict:
@@ -9,7 +10,6 @@ def hello_helper(hello) -> dict:
         "message": hello["message"],
         "email": hello["email"]
     }
-
 
 async def add_hello(hello_data: dict) -> dict:
     """
