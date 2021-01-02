@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 
-from covid_notifier_lite.app.crud.covid import (
+from backend.app.crud.covid import (
     add_covid,
     get_covid,
     get_covid_by_report_no,
@@ -12,14 +12,14 @@ from covid_notifier_lite.app.crud.covid import (
     delete_covid
 )
 
-from covid_notifier_lite.app.models.covid import (
+from backend.app.models.covid import (
     ErrorResponseModel,
     ResponseModel,
     CovidSchema,
     UpdateCovidModel
 )
 
-from covid_notifier_lite.send_email import send_email
+from backend.send_email import send_email
 
 CovidRouter = APIRouter()
 
@@ -68,7 +68,7 @@ async def list_covid_from_dgs():
                 new_covid = await add_covid(covid)
                 i += 1
 
-                send_email(covid)
+                # send_email(covid)
 
     if i > 0:
         response_message = "Added new reports"

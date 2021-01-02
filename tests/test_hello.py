@@ -1,8 +1,8 @@
 import pytest
 from fastapi.encoders import jsonable_encoder
-from covid_notifier_lite.app.routes import hello as route
-from covid_notifier_lite.app.models import hello as model
-from covid_notifier_lite.app.crud import hello as crud
+from backend.app.routes import hello as route
+from backend.app.models import hello as model
+from backend.app.crud import hello as crud
 
 
 @pytest.mark.asyncio
