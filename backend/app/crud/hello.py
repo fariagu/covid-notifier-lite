@@ -1,6 +1,6 @@
 from typing import Any
 from bson.objectid import ObjectId
-from covid_notifier_lite.app.database import hello_collection
+from backend.app.database import hello_collection
 
 
 #helpers

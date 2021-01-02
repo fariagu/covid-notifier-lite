@@ -1,5 +1,5 @@
 import pytest
-from covid_notifier_lite.app.app import read_root
+from backend.app.app import read_root
 
 
 @pytest.mark.asyncio

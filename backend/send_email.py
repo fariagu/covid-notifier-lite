@@ -1,11 +1,8 @@
-from dotenv import load_dotenv
 import os
 import smtplib
 import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-load_dotenv()
 
 def send_email(covid_report: dict):
     smtp_server = os.environ.get('SMPT_SERVER')

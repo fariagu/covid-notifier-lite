@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
 from typing import Optional
 from fastapi import FastAPI
 from html.parser import HTMLParser
-from covid_notifier_lite.app.routes.hello import HelloRouter
-from covid_notifier_lite.app.routes.covid import CovidRouter
+from backend.app.routes.hello import HelloRouter
+from backend.app.routes.covid import CovidRouter
+
+load_dotenv()
 
 app = FastAPI()
 app.include_router(HelloRouter, tags=["Hello"], prefix="/hello")
