@@ -36,7 +36,7 @@ async def controller_get_all_covids():
 
 
 @CovidRouter.get("/list", response_description="Get all covid reports from dgs")
-async def list_covid_from_dgs():
+async def list_covid_from_dgs(notify: bool = False):
     covid_list_request_url = "https://covid19.min-saude.pt/relatorio-de-situacao/"
     get_covid_list_response = requests.get(covid_list_request_url)
 
@@ -68,7 +68,8 @@ async def list_covid_from_dgs():
                 new_covid = await add_covid(covid)
                 i += 1
 
-                # send_email(covid)
+                if notify:
+                    send_email(covid)
 
     if i > 0:
         response_message = "Added new reports"
