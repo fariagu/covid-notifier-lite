@@ -10,5 +10,10 @@ services:
       - mongodb
   mongodb:
     image: mongo:latest
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+    restart: on-failure
     ports:
       - "27017:27017"
