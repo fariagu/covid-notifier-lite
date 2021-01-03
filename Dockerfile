@@ -24,5 +24,3 @@ COPY start.sh .
 RUN poetry install
 
 CMD [ "./start.sh" ]
-# CMD [ "python3", "./backend/main.py" ]
-# CMD [ "ping", "8.8.8.8" ]
