@@ -6,6 +6,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/code
 RUN apk update
 RUN apk add bash
+RUN apk add curl
 RUN apk add gcc
 RUN apk add g++
 RUN apk add libffi-dev build-base openssl-dev

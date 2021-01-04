@@ -18,6 +18,7 @@ pytest-mock = "^3.4.0"
 requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
 google-api-python-client = "^1.12.8"
+python-crontab = "^2.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -29,3 +30,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 start = "backend.main:start"
+job = "backend.main:job"
+dev = "dev:main"
