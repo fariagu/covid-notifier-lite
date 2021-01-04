@@ -35,4 +35,5 @@ def main():
         docker_run = f"docker run --name mongodb -d -p {port} -e {username} -e {password} mongo"
         subprocess.check_output(docker_run, shell=True)
 
+    os.environ["DB_CONTAINER_NAME"] = "localhost"
     start()
