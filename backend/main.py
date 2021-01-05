@@ -1,5 +1,4 @@
 import uvicorn
-import requests
 import os
 from crontab import CronTab
 
@@ -7,7 +6,7 @@ def start():
     uvicorn.run("backend.app.app:app", host="0.0.0.0", port=8000, reload=True)
 
 def job():
-    requests.get("http://localhost:8000/covid?notify=false")
+    os.system("""curl --location --request GET 'http://localhost:8000/covid/list?notify=false'""")
 
     command = """curl --location --request GET 'http://localhost:8000/covid/list?notify=true'"""
 
@@ -18,4 +17,5 @@ def job():
     cron.write()
 
     os.system("crond")
+    os.system("crontab -l")
     
