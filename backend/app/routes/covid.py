@@ -54,7 +54,9 @@ async def list_covid_from_dgs(notify: bool = False):
         if report.text.startswith("R"):
             begin_separator = "Relatório de Situação nº "
             middle_separator = " | "
-            report_no = report.text.split(begin_separator)[1].split(middle_separator)[0]
+            report_string_parts = report.text.split(middle_separator)#[1].split(middle_separator)[0]
+            report_no = report_string_parts[0].split(begin_separator)[1]
+            date_str = report_string_parts[1]
 
             existing_covid = await get_covid_by_report_no(report_no=report_no)
 
@@ -62,7 +64,10 @@ async def list_covid_from_dgs(notify: bool = False):
                 download_url = report.find("a")["href"]
                 covid = {
                     "report_no": report_no,
-                    "download_url": download_url
+                    "download_url": download_url,
+                    "date": date_str,
+                    "infected": 0,
+                    "dead": 0
                 }
                 covid = jsonable_encoder(covid)
                 new_covid = await add_covid(covid)

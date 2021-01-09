@@ -5,12 +5,18 @@ from http import HTTPStatus
 class CovidSchema(BaseModel):
     report_no: int = Field(...)
     download_url: str = Field(...)
+    date: str = Field(...)
+    infected: int = Field(...)
+    dead: int = Field(...)
 
     class Config:
         schema_extra = {
             "example": {
-                "report_no": "001",
-                "download_url": "http://download/file.pdf"
+                "report_no": "101",
+                "download_url": "http://download/file.pdf",
+                "date": "01/01/2021",
+                "infected": "9000",
+                "dead": "900"
             }
         }
 
@@ -21,8 +27,11 @@ class UpdateCovidModel(BaseModel):
     class Config():
         schema_extra = {
             "example": {
-                "report_no": "001",
-                "download_url": "http://download/file.pdf"
+                "report_no": "101",
+                "download_url": "http://download/file.pdf",
+                "date": "01/01/2021",
+                "infected": "9000",
+                "dead": "900"
             }
         }
 
