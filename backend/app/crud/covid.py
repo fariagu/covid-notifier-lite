@@ -8,7 +8,10 @@ def covid_helper(covid) -> dict:
     return {
         "id": str(covid["_id"]),
         "report_no": covid["report_no"],
-        "download_url": covid["download_url"]
+        "download_url": covid["download_url"],
+        "date": covid["date"],
+        "infected": covid["infected"],
+        "dead": covid["dead"]
     }
 
 async def add_covid(covid_data: dict) -> dict:
