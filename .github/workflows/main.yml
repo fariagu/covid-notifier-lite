@@ -12,7 +12,7 @@ jobs:
         id: heroku
         uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0
         with:
-          email: ${{ gustavoduartefaria@gmail.com }} 
-          api_key: ${{ f640f352-d621-4f7f-81ca-20fc2464b010 }} # your  heroku api key
+          email: ${{ 'gustavoduartefaria@gmail.com' }} 
+          api_key: ${{ 'f640f352-d621-4f7f-81ca-20fc2464b010' }} # your  heroku api key
           docker_compose_file: './docker-compose.yml'
           heroku_apps: '[{"imagename":"covid-notifier-lite","appname":"covid-notifier-lite","apptype":"web"}]'
