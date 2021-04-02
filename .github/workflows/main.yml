@@ -15,4 +15,4 @@ jobs:
           email: ${{ gustavoduartefaria@gmail.com }} 
           api_key: ${{ f640f352-d621-4f7f-81ca-20fc2464b010 }} # your  heroku api key
           docker_compose_file: './docker-compose.yml'
-          heroku_apps: '[{"imagename":"covidnotifierlite","appname":"covidnotifierlite","apptype":"web"}]'
+          heroku_apps: '[{"imagename":"covid-notifier-lite","appname":"covid-notifier-lite","apptype":"web"}]'
