@@ -13,7 +13,7 @@ def job():
     cron = CronTab(user=True)
     job  = cron.new(command=command)
     job.minute.every(5)
-    job.hour.during(14, 20)
+    job.hour.during(14, 18)
     cron.write()
 
     os.system("crond")

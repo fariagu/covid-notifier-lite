@@ -20,6 +20,7 @@ from backend.app.models.covid import (
 )
 
 from backend.send_email import send_email
+from backend.send_telegram import send_telegram
 
 CovidRouter = APIRouter()
 
@@ -70,11 +71,12 @@ async def list_covid_from_dgs(notify: bool = False):
                     "dead": 0
                 }
                 covid = jsonable_encoder(covid)
-                new_covid = await add_covid(covid)
+                await add_covid(covid)
                 i += 1
 
                 if notify:
-                    send_email(covid)
+                    # send_email(covid)
+                    send_telegram(covid)
 
     if i > 0:
         response_message = "Added new reports"

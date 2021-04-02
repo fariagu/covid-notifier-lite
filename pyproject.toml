@@ -19,6 +19,7 @@ requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
 google-api-python-client = "^1.12.8"
 python-crontab = "^2.5.1"
+telegram-send = "^0.25"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
